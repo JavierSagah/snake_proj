@@ -1,4 +1,6 @@
 # curses is Mac only
+# to run this curses window, we need to emulate the terminal in the output console
+# Do this in the run configurations -> Execution
 import curses
 from random import randint
 
