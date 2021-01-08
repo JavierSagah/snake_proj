@@ -51,7 +51,7 @@ jobs:
         run: |
           pip install pytest
           pytest test2.py --doctest-modules --junitxml=junit/test2-results.xml
-  Run Snake:
+  RunSnake:
       runs-on: ubuntu-latest
       steps:    
         - uses: actions/checkout@v2
