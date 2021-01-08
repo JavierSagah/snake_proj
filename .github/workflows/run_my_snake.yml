@@ -41,8 +41,8 @@ jobs:
           pip install pytest
           pytest test.py --doctest-modules --junitxml=junit/test-results.xml
   test2:
-    needs: [test1]
     runs-on: ubuntu-latest
     steps:    
+      - uses: actions/checkout@v2
       - name: Test with pytest 2
         run: pytest test2.py --doctest-modules --junitxml=junit/test2-results.xml
