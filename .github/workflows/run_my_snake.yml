@@ -30,12 +30,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          
-#       # Runs a single command using the runners shell
-#       - name: Run the python file to start the game
-#         run: python -s snake_using_turtle.py
-        
+          pip install -r requirements.txt        
       - name: Test with pytest 1
         run: |
           pip install pytest
@@ -44,7 +39,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:    
       - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt        
       - name: Test with pytest 2
         run: |
           pip install pytest
           pytest test2.py --doctest-modules --junitxml=junit/test2-results.xml
+  Run Snake:
+      runs-on: ubuntu-latest
+      steps:    
+        - uses: actions/checkout@v2
+        # Runs a single command using the runners shell
+        - name: Run the python file to start the game
+          run: python -s snake_using_turtle.py
