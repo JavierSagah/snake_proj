@@ -36,9 +36,12 @@ jobs:
 #       - name: Run the python file to start the game
 #         run: python -s snake_using_turtle.py
         
-      - name: Test with pytest
+      - name: Test with pytest 1
+        run: |
+          pip install pytest
+          pytest test.py --doctest-modules --junitxml=junit/test-results.xml
+
+      - name: Test with pytest 2
         run: |
           pip install pytest
           pytest test2.py --doctest-modules --junitxml=junit/test2-results.xml
-          pytest test.py --doctest-modules --junitxml=junit/test-results.xml
-
