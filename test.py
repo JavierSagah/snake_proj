@@ -1,6 +1,6 @@
 import pytest
 
-@pytest.mark.parametrize('value', [true, false])
+@pytest.mark.parametrize('value', [True, False])
 def my_test(value):
-  assert value == true
+  assert value == True
  
