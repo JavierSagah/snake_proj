@@ -41,9 +41,8 @@ jobs:
           pip install pytest
           pytest test.py --doctest-modules --junitxml=junit/test-results.xml
   test2:
+    needs: [test1]
     runs-on: ubuntu-latest
     steps:    
       - name: Test with pytest 2
-        run: |
-          pip install pytest
-          pytest test2.py --doctest-modules --junitxml=junit/test2-results.xml
+        run: pytest test2.py --doctest-modules --junitxml=junit/test2-results.xml
