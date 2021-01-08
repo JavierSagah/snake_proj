@@ -45,4 +45,6 @@ jobs:
     steps:    
       - uses: actions/checkout@v2
       - name: Test with pytest 2
-        run: pytest test2.py --doctest-modules --junitxml=junit/test2-results.xml
+        run: |
+          pip install pytest
+          pytest test2.py --doctest-modules --junitxml=junit/test2-results.xml
