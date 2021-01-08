@@ -35,6 +35,10 @@ jobs:
         run: |
           pip install pytest
           pytest test.py --doctest-modules --junitxml=junit/test-results.xml
+      # Runs a single command using the runners shell
+      - name: Run the python file to start the game
+        if: always()
+        run: python -s snake_using_turtle.py
   test2:
     runs-on: ubuntu-latest
     steps:    
